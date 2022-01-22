@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ITIMVCProjectV1.ViewModel.BillViewModel>
+@{
+    ViewBag.Title = "Submit orders ";
+    Layout = "~/Views/Shared/_OurLayOut.cshtml";
+
+}
+
+<h1 class="text-capitalize text-capitalize my-3"> total cost  @ViewBag.totalCost $ </h1>
+ 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            @foreach (var item in Model)
+            {
+                <div style="border : 2px solid green">
+                    <h2> Product Name :  @item.Name </h2>
+                    <h2>  Amount  : @item.Amount </h2>
+                    <h2> Product salary :@item.Cost </h2>
+                    <h2> Provider Name : @item.ProviderName </h2>
+                </div>
+            }
+        </div>
+        <div class="col-6">
+            <form action="@Url.Action("Confirm","Customer") " method="post">
+                <input type="number" name="Order_id" value="@ViewBag.orderId" hidden />
+                <input type="datetime" class="form-control mb-3" name="ReservationDate" value="@ViewBag.ReservationDate" readonly />
+                <input type="datetime"  class="form-control mb-3" name="DelveryDate" value="@ViewBag.deleveryDate" readonly />
+                <input type="number" class="form-control mb-3" name="Cost" value="@ViewBag.Cost" readonly />
+                <input type="text"   class="form-control mb-3" name="Destination" placeholder="Enter The Adress" required />
+                <input type="submit" class="btn btn-primary mb-3" value="Sumbit order" />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

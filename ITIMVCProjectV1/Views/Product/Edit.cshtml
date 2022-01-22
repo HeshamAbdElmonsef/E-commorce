@@ -1,0 +1,46 @@
+﻿@model ITIMVCProjectV1.ViewModel.AdminEditProductViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3"> Edit </h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="@Url.Action("Edit","Product")" method="post" enctype="multipart/form-data">
+                <input type="number" name="Id" value="@Model.Id" hidden />
+                <input type="text" class="form-control mb-3" name="Name" placeholder="Product Name" value="@Model.Name" />
+                <input type="number" class="form-control mb-3" name="Cost" placeholder="Product Cost" value="@Model.Cost" />
+                <input type="number" class="form-control mb-3" name="Salary" placeholder="Product Salary" value="@Model.Salary" />
+                <input type="number" class="form-control mb-3" name="TotleAmount" placeholder="Product Amount" value="@Model.TotleAmount" />
+                <img src="~/Image/@Model.Image" width="200px" height="200px" />
+                <input type="file" class="form-control mb-3" name="UploadedFile" required />
+                <input type="text" class="form-control mb-3" name="ProviderName" placeholder="Provider Name" value="@Model.ProviderName" />
+                <label for="cars">Choose a Category </label>
+
+                <select name="Category_id" id="cars" class="form-control mb-3">
+                    @foreach (var item in ViewBag.Category)
+                    {
+                        if (Model.Category_id == @item.ID)
+                        {
+                            <option value="@item.ID" selected> @item.Type </option>
+
+                        }
+                        <option value="@item.ID">@item.Type</option>
+
+                    }
+
+                </select>
+                <input type="submit" class="btn btn-primary mb-3" value="Edit" />
+                <a href="@Url.Action("index","Product")" class="btn btn-secondary mb-3">  Cancel  </a>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

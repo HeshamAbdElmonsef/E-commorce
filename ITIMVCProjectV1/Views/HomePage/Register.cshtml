@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_OurLayOut.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3">Register</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+
+            <form action="@Url.Action("Register","HomePage")" method="post">
+                <div class="mb-3">
+                    <label for="Namme" class="form-label"> Name </label>
+                    <input type="text" name="Name" class="form-control mb-3" id="Name" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="UserName" class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="Password" class="form-control mb-3" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="PhoneNumber" class="form-label"> Phone Number </label>
+                    <input type="text" name="PhoneNumber" class="form-control mb-3" id="PhoneNumber" aria-describedby="emailHelp" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-3"> Register </button>
+                <a href="@Url.Action("Login","HomePage")" class="btn btn-secondary mb-3"> Oready Have Acount </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>

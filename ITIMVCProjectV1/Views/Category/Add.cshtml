@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3" >Add new category</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="@Url.Action("Add","Category")" method="post">
+                <input type="text" class="form-control mb-3" name="CategoryName" placeholder="Category Name" />
+                <input type="submit" class="btn btn-primary mb-3" value="Submit" />
+                <a href="@Url.Action("index","Category")" class="btn btn-secondary mb-3">  Cancel  </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+

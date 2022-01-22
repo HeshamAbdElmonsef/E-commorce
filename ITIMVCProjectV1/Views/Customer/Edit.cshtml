@@ -1,0 +1,25 @@
+﻿
+@model ITIMVCProjectV1.ViewModel.EditCustomerViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_OurLayOut.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3"> Edit Your Profile  </h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="@Url.Action("Edit","Customer")" method="post">
+                <input type="number" value="@Model.ID" name="ID" hidden />
+                <input type="text"class="form-control mb-3" name="Name" value="@Model.Name">
+                <input type="text" class="form-control mb-3" id="lname" name="UserName" value="@Model.UserName">
+                <input type="password" class="form-control mb-3" name="Password" value="@Model.Password">
+                <input type="text" class="form-control mb-3" id="lname" name="Phone" value="@Model.Phone">
+                <input type="submit" class="btn btn-primary mb-3" value="Submit">
+                <a href="@Url.Action("index","customer")" class="btn btn-secondary mb-3"> Cancel </a>
+            </form>
+        </div>
+    </div>
+</div>
+

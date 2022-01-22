@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ITIMVCProjectV1.ViewModel.CategoryNameViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3"> Category  </h2>
+
+<td> <a href="@Url.Action("Add", "Category")" class="btn btn-primary mb-3 text-capitalize"> Add new Category  </a> </td>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"> Category Name  </th>
+            <th scope="col"> Edit  </th>
+            <th scope="col"> Delete </th>
+
+        </tr>
+    </thead>
+    <tbody>
+ 
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @item.CategoryName </td>
+                    <td> <a href="@Url.Action("Edit", "Category" , new {Id =item.Category_id })" class="btn btn-success"> Edit </a> </td>
+                    <td> <a href="@Url.Action("Delete", "Category", new {Id =item.Category_id })" class="btn btn-danger"> Delete  </a> </td>
+                </tr>
+            }
+
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ITIMVCProjectV1.Models.Customer>
+@{
+    ViewBag.Title = "AllCustomer";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+}
+
+<h2 class="text-center text-capitalize my-3">All Customer</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            User Name
+        </th>
+
+        <th>
+            Phone Number
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.UserName
+            </td>
+
+            <td>
+                @item.Phone
+            </td>
+
+        </tr>
+    }
+
+</table>

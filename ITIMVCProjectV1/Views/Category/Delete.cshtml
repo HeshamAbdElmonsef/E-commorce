@@ -1,0 +1,27 @@
+﻿@model ITIMVCProjectV1.ViewModel.CategoryNameViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3">Delete @Model.CategoryName Category </h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="@Url.Action("Delete","Category")" method="post">
+
+                <input name="Category_id" value="@Model.Category_id" hidden />
+                <p>
+                    first you should delete all products that assioate to this category
+                </p>
+                <input type="submit" class="btn btn-primary mb-3" value="Delete" />
+                <a href="@Url.Action("index","Category")" class="btn btn-secondary mb-3">  Cancel  </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

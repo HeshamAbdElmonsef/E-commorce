@@ -1,0 +1,28 @@
+﻿@model ITIMVCProjectV1.ViewModel.AdminDeleteProduct
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-center text-capitalize my-3">Delete</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="@Url.Action("Delete","Product")" method="post">
+                <input type="number" value="@Model.Id" hidden />
+                <input type="text" class="form-control mb-3" name="Name" placeholder="Product Name" value="@Model.Name" />
+                <input type="number"class="form-control mb-3" name="Cost" placeholder="Product Cost" value="@Model.Cost" />
+                <input type="number" class="form-control mb-3"  name="Salary" placeholder="Product Salary" value="@Model.Salary" />
+                <img src="~/Image/@Model.Image" width="200px" height="200px" />
+                <input type="text"class="form-control mb-3"  name="ProviderName" placeholder="Provider Name" value="@Model.ProviderName" />
+
+                <input type="submit" class="btn btn-primary mb-3" value="Delete" />
+                <a href="@Url.Action("index","Product")" class="btn btn-secondary mb-3">  Cancel  </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

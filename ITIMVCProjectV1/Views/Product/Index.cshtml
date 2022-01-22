@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ITIMVCProjectV1.ViewModel.AdminProductViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminNavBar.cshtml";
+
+}
+
+<h2 class="text-capitalize text-center my-3">All Product</h2>
+<h3>
+    <a href="@Url.Action("Add", "Product")" class="btn btn-primary mb-3 text-capitalize"> Add Product</a>
+</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th> ID</th>
+        <th> Product Name </th>
+        <th> Product Salary </th>
+        <th> Product Cost </th>
+        <th> Product Image  </th>
+        <th> current amount </th>
+        <th> total amount  </th>
+        <th> Provider Name </th>
+        <th> Category  </th>
+
+        <th> Edit Product </th>
+        <th> Delete Product </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td> @item.ID </td>
+    <td> @item.Name </td>
+    <td>@item.Salary </td>
+    <td> @item.Cost</td>
+    <td>
+        <img src="~/Image/@item.Image" alt="" height=100 width=200 />
+    </td>
+    <td> @item.Amount </td>
+    <td> @item.TotleAmount </td>
+    <td> @item.ProviderName </td>
+    <td> @item.Category.Type </td>
+
+    <td>
+        <a href="@Url.Action("Edit","Product",new { id = item.ID })" class="btn btn-primary"> Edit</a>
+    </td>
+    <td>
+        <a href="@Url.Action("Delete", "Product", new { id = item.ID })" class="btn btn-danger"> Delete</a>
+    </td>
+
+
+</tr>
+
+
+    }
+
+
+
+</table>

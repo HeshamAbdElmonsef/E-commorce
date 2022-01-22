@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_OurLayOut.cshtml";
+}
+
+<h2 class="text-center text-capitalize my-3">Login admin </h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="/admin/login" method="post">
+                @if (!ViewBag.isvalid)
+                {
+                    <p> plesae enter Valid UserName or Password  </p>
+                }
+                <input type="email" class="form-control mb-3" placeholder="PLz enter your Email" name="UserName" />
+                <input type="password" class="form-control mb-3" placeholder="PLz enter your password" name="Password" />
+                <input type="submit" class="btn btn-success mb-3" value="Login" />
+
+            </form>
+        </div>
+    </div>
+</div>
+
